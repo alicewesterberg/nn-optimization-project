@@ -36,6 +36,6 @@ class SimpleCNN(nn.Module):
 def build_model(name: str, num_classes: int = 10) -> nn.Module:
     if name == "simple_cnn":
         return SimpleCNN(num_classes)
-    raise ValueError(f"Okänd modell: {name}")
+    raise ValueError(f"Unknown model: {name}")
 
 
