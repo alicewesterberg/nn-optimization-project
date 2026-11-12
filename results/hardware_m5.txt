@@ -1,0 +1,15 @@
+Thu Nov 12 22:47:22 CET 2026
+ProductName:		macOS
+ProductVersion:		26.7.3
+BuildVersion:		25G342
+Machine: MacBook Pro (Mac17,9)
+CPU: Apple M5 Pro (arm64)
+CPU cores: 15 (5 Super + 10 Performance), no SMT
+GPU: Apple M5 Pro, 16 cores (MPS)
+RAM: 24 GB
+python 3.11.18
+torch 2.15.0 | default threads 5
+torchvision 0.29.2
+onnxruntime 1.31.1
+mps available True
+quantized engines ['qnnpack']

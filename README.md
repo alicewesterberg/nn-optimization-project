@@ -171,13 +171,13 @@ Correct benchmarking matters more than any single optimization. All measurements
 | | CPU and Apple GPU measurements | NVIDIA GPU measurements |
 | --- | --- | --- |
 | Machine | MacBook Pro, Apple M5 Pro | Google Colab |
-| CPU | TODO: performance + efficiency cores (see `results/hardware_m5.txt`) | (see `results/hardware_colab.txt`) |
-| GPU | Apple M5 Pro GPU, TODO cores (MPS) | NVIDIA Tesla T4, 16 GB |
-| Memory | TODO GB unified (shared by CPU and GPU) | (see `results/hardware_colab.txt`) |
-| OS | TODO macOS version | Linux (Colab) |
+| CPU | Apple M5 Pro (arm64), 15 cores: 5 Super + 10 Performance | (see `results/hardware_colab.txt`) |
+| GPU | Apple M5 Pro GPU, 16 cores (MPS) | NVIDIA Tesla T4, 16 GB |
+| Memory | 24 GB unified (shared by CPU and GPU) | (see `results/hardware_colab.txt`) |
+| OS | macOS 26.7.3 | Linux (Colab) |
 | Python | 3.11 | (Colab default) |
-| PyTorch | TODO | 2.11.0 + CUDA 13.0 |
-| ONNX Runtime | TODO | TODO |
+| PyTorch | 2.15.0 | 2.11.0 + CUDA 13.0 |
+| ONNX Runtime | 1.31.1 | TODO |
 
 Full details: `results/hardware_m5.txt` and `results/hardware_colab_*.txt`.
 
