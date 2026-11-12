@@ -120,7 +120,7 @@ Correct benchmarking matters more than any single optimization. All measurements
 - **Batch size 1 and 32.** Batch 1 represents real-time latency; batch 32 represents throughput.
 - **Inference only.** Data is loaded to the device before timing starts; data loading is never part of latency or throughput.
 - **Environments reported separately.** Results from M5 Pro CPU, M5 Pro MPS and Colab CUDA are kept apart, and speed-up is always computed against the baseline in the same environment.
-- **Fixed CPU threads.** The number of threads is set to the number of performance cores.
+- **Fixed CPU threads.** CPU benchmarks use 5 threads (`torch.set_num_threads(5)`), one per Super core on the M5 Pro, which is also PyTorch's default. More threads spill onto the slower Performance cores: for SimpleCNN, 10 threads were about 2× slower than 5. macOS does not allow pinning threads to specific cores, so the OS still decides where each thread runs.
 - **One process per variant,** so memory measurements and caches do not leak between runs.
 
 ---
