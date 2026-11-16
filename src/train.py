@@ -26,7 +26,7 @@ def train_one_epoch(model, loader, optimizer, criterion, device):
         total_loss += loss.item() * y.size(0)
         correct += (logits.argmax(dim=1) == y).sum().item()
         total += y.size(0)
-    pbar.set_postfix(loss=f"{total_loss / total:.3f}", acc=f"{100 * correct / total:.1f}%")
+        pbar.set_postfix(loss=f"{total_loss / total:.3f}", acc=f"{100 * correct / total:.1f}%")
     return total_loss / total, 100.0 * correct / total
 
 
