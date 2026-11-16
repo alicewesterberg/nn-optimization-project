@@ -2,7 +2,7 @@ import random
 import numpy as np
 import torch
 
-def set_seed(seed: int = 42) -> None:
+def set_seed(seed: int = 42) -> None: #we have the same seed so the runs are reproducible
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
