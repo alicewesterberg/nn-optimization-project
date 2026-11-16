@@ -171,15 +171,15 @@ Correct benchmarking matters more than any single optimization. All measurements
 | | CPU and Apple GPU measurements | NVIDIA GPU measurements |
 | --- | --- | --- |
 | Machine | MacBook Pro, Apple M5 Pro | Google Colab |
-| CPU | Apple M5 Pro (arm64), 15 cores: 5 Super + 10 Performance | (see `results/hardware_colab.txt`) |
-| GPU | Apple M5 Pro GPU, 16 cores (MPS) | NVIDIA Tesla T4, 16 GB |
-| Memory | 24 GB unified (shared by CPU and GPU) | (see `results/hardware_colab.txt`) |
+| CPU | Apple M5 Pro (arm64), 15 cores: 5 Super + 10 Performance | Intel Xeon @ 2.00 GHz (x86_64, KVM), 1 core / 2 threads, AVX-512 |
+| GPU | Apple M5 Pro GPU, 16 cores (MPS) | NVIDIA Tesla T4, 15 GB usable (driver 580.82.07) |
+| Memory | 24 GB unified (shared by CPU and GPU) | 12 GB RAM + 15 GB GPU memory (separate) |
 | OS | macOS 26.7.3 | Linux (Colab) |
-| Python | 3.11 | (Colab default) |
-| PyTorch | 2.15.0 | 2.11.0 + CUDA 13.0 |
+| Python | 3.11 | 3.13 |
+| PyTorch | 2.15.0 | 2.14.1 + CUDA 13.0, cuDNN 9.28 |
 | ONNX Runtime | 1.31.1 | TODO |
 
-Full details: `results/hardware_m5.txt` and `results/hardware_colab_*.txt`.
+Full details: `results/hardware_m5.txt` and `results/hardware_colab_t4.txt`.
 
 ---
 
@@ -244,7 +244,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 !git clone https://github.com/alicewesterberg/nn-optimization-project.git
 %cd nn-optimization-project
-!pip install -q timm onnx onnxruntime-gpu pynvml torch-pruning
+!pip install -q timm onnx onnxruntime-gpu nvidia-ml-py torch-pruning
 !python -m src.check_setup
 ```
 
