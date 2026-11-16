@@ -42,4 +42,11 @@ def get_loaders(batch_size: int = 128, num_workers: int = 0):
     val_loader = DataLoader(val_set, batch_size=batch_size, shuffle=False, num_workers=num_workers)
     test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False, num_workers=num_workers)
     return train_loader, val_loader, test_loader
+
+
+def get_test_loader(batch_size: int = 256, num_workers: int = 0):
+    """Only the test set (no train/val), for evaluating saved models."""
+    test_data = tv.datasets.CIFAR10(root="data", train=False, download=True,
+                                    transform=get_transforms(train=False))
+    return DataLoader(test_data, batch_size=batch_size, shuffle=False, num_workers=num_workers)
     
